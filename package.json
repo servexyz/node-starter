@@ -6,10 +6,12 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.39",
     "@babel/node": "^7.0.0-beta.39",
-    "@babel/preset-env": "^7.0.0-beta.39"
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "ava": "^1.0.0-beta.1"
   },
   "scripts": {
-    "start": "babel-node index.js"
+    "start": "babel-node index.js",
+    "test": "ava"
   },
   "babel": {
     "presets": [
