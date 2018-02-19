@@ -10,7 +10,10 @@
     "ava": "^1.0.0-beta.1"
   },
   "scripts": {
-    "start": "babel-node index.js",
+    "dev": "babel-node index.js",
+    "start": "npm run clean && npm run build && node ./build",
+    "clean": "rm -Rf ./build",
+    "build": "babel -d ./build ./index.js -s",
     "test": "ava"
   },
   "babel": {
