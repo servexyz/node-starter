@@ -26,5 +26,7 @@ npm start
 
 ## Related
 
+**Internal**
+
 * [@servexyz/cli-starter](https://github.com/servexyz/cli-starter)
 * [@servexyz/service-starter](https://github.com/servexyz/service-starter)
