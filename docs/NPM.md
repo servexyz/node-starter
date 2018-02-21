@@ -4,24 +4,27 @@
 
 ## Getting Started
 
-**Install**
+### Install
 
 ```bash
 git clone git@github.com:servexyz/npm-starter myProjectName
 ```
 
-**Execute CLI**
+### Use
 
-```bash
-npm start
-```
-
-**Test CLI**
+**Test**
 
 ```bash
 npm run test
 ```
 
+**Execute**
+
+```bash
+npm start
+```
+
 ## Related
 
 * [@servexyz/cli-starter](https://github.com/servexyz/cli-starter)
+* [@servexyz/service-starter](https://github.com/servexyz/service-starter)
