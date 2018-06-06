@@ -1,1 +1,1 @@
-{"version":3,"sources":["../index.js"],"names":["console","log"],"mappings":"AAAAA,QAAQC,GAAR,CAAY,IAAZ","file":"index.js","sourcesContent":["console.log(\"hi\");\n"]}
+{"version":3,"sources":["../index.js"],"names":["console","log"],"mappings":";;AACAA,QAAQC,GAAR,CAAa,SAAD,QAAoB,EAAhC","sourcesContent":["import { SAMPLE_ENV } from \"babel-dotenv\";\nconsole.log(`Hello ${SAMPLE_ENV}`);\n"],"file":"index.js"}

@@ -8,11 +8,12 @@
     "url": "https://github.com/servexyz/npm-starter"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.40",
-    "@babel/core": "^7.0.0-beta.39",
-    "@babel/node": "^7.0.0-beta.39",
-    "@babel/preset-env": "^7.0.0-beta.39",
-    "ava": "^1.0.0-beta.1"
+    "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/node": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "ava": "^1.0.0-beta.5.1",
+    "babel-plugin-dotenv": "^0.1.1"
   },
   "scripts": {
     "dev": "babel-node index.js",
@@ -29,6 +30,14 @@
           "targets": {
             "node": "9.3.0"
           }
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "babel-plugin-dotenv",
+        {
+          "replacedModuleName": "babel-dotenv"
         }
       ]
     ]
