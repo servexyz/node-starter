@@ -1,7 +1,7 @@
 {
   "name": "npm-starter",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,33 +13,19 @@
     "@babel/node": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
     "ava": "^1.0.0-beta.5.1",
-    "babel-plugin-dotenv": "^0.1.1"
+    "babel-loader": "^8.0.0-beta.3",
+    "babel-plugin-dotenv": "^0.1.1",
+    "nodemon-webpack-plugin": "^4.0.3",
+    "npm-run-all": "^4.1.3",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.2"
   },
   "scripts": {
-    "dev": "babel-node index.js",
-    "start": "npm run clean && npm run build && node ./build",
+    "test": "ava",
+    "start": "npm run dev",
+    "start:prod": "npm-run-all -s clean prod",
     "clean": "rm -Rf ./build",
-    "build": "babel -d ./build ./index.js -s",
-    "test": "ava"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "9.3.0"
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      [
-        "babel-plugin-dotenv",
-        {
-          "replacedModuleName": "babel-dotenv"
-        }
-      ]
-    ]
+    "dev": "webpack --mode development --watch",
+    "prod": "webpack --mode production"
   }
 }
