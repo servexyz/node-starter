@@ -1,13 +1,6 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "node": "9.3.0"
-        }
-      }
-    ]
+    "@babel/preset-env"
   ],
   "plugins": [
     [
