@@ -27,5 +27,12 @@
     "build": "npm-run-all build:clean build:prod",
     "build:clean": "rm -Rf ./build",
     "build:prod": "webpack --mode production"
+  },
+  "ava": {
+    "require": [
+      "@babel/register",
+      "@babel/polyfill"
+    ],
+    "verbose": true
   }
 }
