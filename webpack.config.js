@@ -2,13 +2,10 @@ const path = require("path");
 const NodemonPlugin = require("nodemon-webpack-plugin");
 
 module.exports = {
-  entry: [path.resolve(__dirname, "src/index.js")],
+  entry: ["idempotent-babel-polyfill", path.resolve(__dirname, "src/index.js")],
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "main.bundle.js"
-  },
-  node: {
-    fs: "empty"
   },
   module: {
     rules: [

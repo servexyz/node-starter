@@ -22,17 +22,15 @@
     "webpack-cli": "^3.0.2"
   },
   "scripts": {
-    "test": "ava",
-    "start": "npm run build",
-    "dev": "webpack --mode development --watch",
-    "build": "npm-run-all build:clean build:prod",
-    "link": "npm link aws-sls-auther",
-    "build:clean": "rm -Rf ./build",
-    "build:prod": "webpack --mode production"
+    "start": "npm-run-all -s clean build test",
+    "clean": "rm -Rf ./build",
+    "build": "webpack --mode production",
+    "test": "ava"
   },
   "ava": {
     "require": [
-      "@babel/register"
+      "@babel/register",
+      "idempotent-babel-polyfill"
     ],
     "verbose": true
   }
