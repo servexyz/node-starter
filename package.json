@@ -25,6 +25,7 @@
     "start": "npm run build",
     "dev": "webpack --mode development --watch",
     "build": "npm-run-all build:clean build:prod",
+    "link": "npm link aws-sls-auther",
     "build:clean": "rm -Rf ./build",
     "build:prod": "webpack --mode production"
   },
