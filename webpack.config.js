@@ -2,10 +2,10 @@ const path = require("path");
 const NodemonPlugin = require("nodemon-webpack-plugin");
 
 module.exports = {
-  entry: ["@babel/polyfill", path.resolve(__dirname, "src/index.js")],
+  entry: [path.resolve(__dirname, "src/index.js")],
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "main.js"
+    filename: "main.bundle.js"
   },
   node: {
     fs: "empty"
@@ -18,7 +18,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            babelrc: true
+            presets: ["@babel/preset-env", "@ava/babel-preset-stage-4"],
+            plugins: [
+              ["babel-plugin-dotenv", { replacedModuleName: "babel-dotenv" }]
+            ]
           }
         }
       }
