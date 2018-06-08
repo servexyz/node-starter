@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.49",
+    "@babel/polyfill": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
     "@babel/register": "^7.0.0-beta.49",
     "ava": "^1.0.0-beta.5.1",
@@ -29,7 +30,8 @@
   },
   "ava": {
     "require": [
-      "@babel/register"
+      "@babel/register",
+      "@babel/polyfill"
     ],
     "verbose": true
   }
