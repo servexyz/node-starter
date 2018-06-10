@@ -7,7 +7,8 @@ module.exports = {
   entry: ["idempotent-babel-polyfill", path.resolve(__dirname, "src/index.js")],
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "main.js"
+    filename: "main.js",
+    output: "commonjs"
   },
   target: "node",
   externals: [NodeExternals()],
