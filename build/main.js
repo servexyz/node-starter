@@ -96,62 +96,8 @@
 "use strict";
 
 
-var _util = __webpack_require__(/*! ./util.js */ "./src/util.js");
-
 console.log("Hello ".concat("foobar", "!"));
 console.log("\n Index \n ------------- \n");
-(0, _util.auth)();
-
-/***/ }),
-
-/***/ "./src/util.js":
-/*!*********************!*\
-  !*** ./src/util.js ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.auth = auth;
-
-var _awsSlsAuther = __webpack_require__(/*! aws-sls-auther */ "aws-sls-auther");
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
-
-function auth() {
-  return _auth.apply(this, arguments);
-}
-
-function _auth() {
-  _auth = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
-    var token;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return (0, _awsSlsAuther.authenticate)("alechp", "123456");
-
-          case 2:
-            token = _context.sent;
-            console.log("Token from Ava: ".concat(token));
-
-          case 4:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, this);
-  }));
-  return _auth.apply(this, arguments);
-}
 
 /***/ }),
 
@@ -165,17 +111,6 @@ function _auth() {
 __webpack_require__(/*! idempotent-babel-polyfill */"idempotent-babel-polyfill");
 module.exports = __webpack_require__(/*! /Users/alechp/Code/servexyz/starter/.repositories/npm-starter/src/index.js */"./src/index.js");
 
-
-/***/ }),
-
-/***/ "aws-sls-auther":
-/*!*********************************!*\
-  !*** external "aws-sls-auther" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("aws-sls-auther");
 
 /***/ }),
 
