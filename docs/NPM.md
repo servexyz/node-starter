@@ -12,7 +12,15 @@ git clone git@github.com:servexyz/npm-starter
 
 ### Use
 
-**Test**
+**Opt A - All Together (recommended)**
+> Cleans previous build, builds and runs test suite
+
+```bash
+npm start
+```
+
+
+**Opt B - Test**
 
 > Can run test in isolation
 
@@ -20,12 +28,12 @@ git clone git@github.com:servexyz/npm-starter
 npm run test
 ```
 
-**Build**
+**Opt C - Build**
 
 > Can run build in isolation
 
 ```bash
-npm start
+npm build
 ```
 
 ## Related
