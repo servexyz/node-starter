@@ -36,6 +36,16 @@ npm run test
 npm build
 ```
 
+---
+
+### Docs
+
+You'll notice that README.md is symlinked. 
+
+When forking, remove README.md. The `NPM.md` file will still exist in docs (that way you don't lose initial reference)
+
+---
+
 ## Related
 
 **Internal**
