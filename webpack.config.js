@@ -1,6 +1,7 @@
 const path = require("path");
 const NodemonPlugin = require("nodemon-webpack-plugin");
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
+const NodeExternals = require("webpack-node-externals");
 
 module.exports = {
   entry: ["idempotent-babel-polyfill", path.resolve(__dirname, "src/index.js")],
@@ -9,6 +10,7 @@ module.exports = {
     filename: "main.js"
   },
   target: "node",
+  externals: [NodeExternals()],
   module: {
     rules: [
       {
