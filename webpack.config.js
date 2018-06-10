@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "main.js",
-    output: "commonjs"
+    libraryTarget: "commonjs"
   },
   target: "node",
   externals: [NodeExternals()],

@@ -26,14 +26,13 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "dev": "npm run link && npm run start:webpack",
+    "dev": " npm run start:webpack",
     "start:babel": "babel-node src/index.js",
     "start:webpack": "webpack --mode development --watch",
     "start": "npm-run-all -s clean build test",
     "clean": "rm -Rf ./build",
     "build": "webpack --mode production",
-    "test": "ava",
-    "link": "npm link aws-sls-auther"
+    "test": "ava"
   },
   "ava": {
     "require": [
