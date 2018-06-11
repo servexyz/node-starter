@@ -40,5 +40,8 @@
       "idempotent-babel-polyfill"
     ],
     "verbose": true
+  },
+  "dependencies": {
+    "npm-starter-sample-module": "0.0.2"
   }
 }
