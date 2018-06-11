@@ -13,12 +13,12 @@ git clone git@github.com:servexyz/npm-starter
 ### Use
 
 **Opt A - All Together (recommended)**
+
 > Cleans previous build, builds and runs test suite
 
 ```bash
 npm start
 ```
-
 
 **Opt B - Test**
 
@@ -40,7 +40,7 @@ npm build
 
 ### Docs
 
-You'll notice that README.md is symlinked. 
+You'll notice that README.md is symlinked.
 
 When forking, remove README.md. The `NPM.md` file will still exist in docs (that way you don't lose initial reference)
 
@@ -52,3 +52,6 @@ When forking, remove README.md. The `NPM.md` file will still exist in docs (that
 
 - [@servexyz/cli-starter](https://github.com/servexyz/cli-starter)
 - [@servexyz/service-starter](https://github.com/servexyz/service-starter)
+- [@servexyz/npm-starter-sample-module](https://github.com/servexyz/npm-starter-sample-module)
+
+> The purpose of npm-starter-sample-module is to ensure that imports are working (ie. confirm that webpack is building libraries properly)
