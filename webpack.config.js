@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     new NodemonPlugin({
-      verbose: true
+      verbose: false
     }),
     new DuplicatePackageCheckerPlugin()
   ]

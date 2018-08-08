@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@ava/babel-preset-stage-4": "^1.1.0",
+    "@babel/cli": "^7.0.0-beta.56",
     "@babel/core": "^7.0.0-beta.49",
     "@babel/node": "^7.0.0-beta.49",
     "@babel/preset-env": "^7.0.0-beta.49",
@@ -17,9 +18,10 @@
     "babel-loader": "^8.0.0-beta.3",
     "babel-plugin-dotenv": "^0.1.1",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "nodemon": "^1.18.3",
     "nodemon-webpack-plugin": "^4.0.3",
-    "npm-starter-sample-module": "0.0.2",
     "npm-run-all": "^4.1.3",
+    "npm-starter-sample-module": "0.0.2",
     "source-map-loader": "^0.2.3",
     "webpack": "^4.11.1",
     "webpack-cli": "^3.0.2",
@@ -29,13 +31,14 @@
     "idempotent-babel-polyfill": "^0.1.1"
   },
   "scripts": {
-    "dev": " npm run start:webpack",
-    "start:babel": "babel-node src/index.js",
-    "start:webpack": "webpack --mode development --watch",
-    "start": "npm-run-all -s clean build test",
+    "dev": "npm run dev:moduleReload",
+    "dev:module": "babel-node src/index.js",
+    "dev:moduleReload": "nodemon --watch src/index.js --exec 'babel src/index.js'",
+    "dev:server": "webpack --mode development --watch --display minimal",
+    "test": "npm-run-all -s clean build test:ava",
+    "test:ava": "ava",
     "clean": "rm -Rf ./build",
-    "build": "webpack --mode production",
-    "test": "ava",
+    "build": "webpack --mode production --display minimal",
     "publish": "npx np"
   },
   "ava": {
