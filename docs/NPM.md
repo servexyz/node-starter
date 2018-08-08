@@ -21,11 +21,6 @@ git clone git@github.com:servexyz/node-starter
 - **Module without babel compile**: `npm run dev:vanillaModule`
 - **Server with babel compile & livereload?**: `npm run dev:server`
 
-_Why are server & module separated?_
-
-- Module is compiled/run via CLI (using @babel/cli & nodemon)
-- Server is compiled & run via webpack config (using webpack & nodemon-webpack-plugin)
-
 ##### Production
 
 - **Build**: `npm run build`
@@ -48,6 +43,15 @@ When forking, remove README.md. The `NPM.md` file will still exist in docs (that
 ##### Demo
 
 ![node-starter cli demo](https://github.com/servexyz/node-starter/blob/master/docs/node-starter-scripts.gif)
+
+---
+
+## Questions
+
+_Why are server & module separated?_
+
+- Module is compiled/run via CLI (using @babel/cli & nodemon)
+- Server is compiled & run via webpack config (using webpack & nodemon-webpack-plugin)
 
 ---
 
