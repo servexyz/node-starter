@@ -16,22 +16,20 @@ git clone git@github.com:servexyz/node-starter
 
 ##### Developing
 
-**Module with babel compile & livereload?**
-`npm run dev:liveRelaodedModule`
+- **Module with babel compile & livereload?**: `npm run dev:liveRelaodedModule`
+- **Module with babel compile**: `npm run dev:builtModule`
+- **Module without babel compile**: `npm run dev:vanillaModule`
+- **Server with babel compile & livereload?**: `npm run dev:server`
 
-**Module with babel compile**
-`npm run dev:builtModule`
+_Why are server & module separated?_
 
-**Module without babel compile**
-`npm run dev:vanillaModule`
+- Module is compiled/run via CLI (using @babel/cli & nodemon)
+- Server is compiled & run via webpack config (using webpack & nodemon-webpack-plugin)
 
 ##### Production
 
-**Build**
-`npm run build`
-
-**Publish**
-`npm run publish`
+- **Build**: `npm run build`
+- **Publish**: `npm run publish`
 
 ##### Testing
 
