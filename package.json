@@ -1,11 +1,11 @@
 {
-  "name": "npm-starter",
+  "name": "node-starter",
   "version": "1.0.0",
   "main": "build/main.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/servexyz/npm-starter"
+    "url": "https://github.com/servexyz/node-starter"
   },
   "devDependencies": {
     "@ava/babel-preset-stage-4": "^1.1.0",
@@ -41,7 +41,8 @@
     "test:ava": "ava",
     "clean": "rm -Rf ./build",
     "build": "webpack --mode production --display minimal",
-    "publish": "npx np"
+    "publish": "npm run build && npm run publish:np",
+    "publish:np": "npx np"
   },
   "ava": {
     "require": [

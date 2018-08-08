@@ -10,9 +10,36 @@
 git clone git@github.com:servexyz/node-starter
 ```
 
-### Use
+---
 
-### Docs
+## Use
+
+##### Developing
+
+**Module with babel compile & livereload?**
+`npm run dev:liveRelaodedModule`
+
+**Module with babel compile**
+`npm run dev:builtModule`
+
+**Module without babel compile**
+`npm run dev:vanillaModule`
+
+##### Production
+
+**Build**
+`npm run build`
+
+**Publish**
+`npm run publish`
+
+##### Testing
+
+`npm run test`
+
+---
+
+## Docs
 
 ##### NPM.MD
 
