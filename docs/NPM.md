@@ -16,6 +16,9 @@ git clone git@github.com:servexyz/node-starter
 
 ##### Developing
 
+> TLDR:
+> npm run dev
+
 - **Module with babel compile & livereload?**: `npm run dev:liveReloadedModule`
 - **Module with babel compile**: `npm run dev:builtModule`
 - **Module without babel compile**: `npm run dev:vanillaModule`
@@ -23,12 +26,19 @@ git clone git@github.com:servexyz/node-starter
 
 ##### Production
 
+> TLDR:
+> npm run build ...or... npm run publish
+
 - **Build**: `npm run build`
-- **Publish**: `npm run publish`
+- **Publish**: `npm run publish` (this publishes module to NPM)
 
 ##### Testing
 
-`npm run test`
+> TLDR:
+> npm run test
+
+- **Test Ava Once**: `npm run test:ava`
+- **Test Ava with Live Reload**: `npm run test:liveReloadedAva`
 
 ---
 
