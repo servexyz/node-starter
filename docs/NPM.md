@@ -16,7 +16,7 @@ git clone git@github.com:servexyz/node-starter
 
 ##### Developing
 
-- **Module with babel compile & livereload?**: `npm run dev:liveRelaodedModule`
+- **Module with babel compile & livereload?**: `npm run dev:liveReloadedModule`
 - **Module with babel compile**: `npm run dev:builtModule`
 - **Module without babel compile**: `npm run dev:vanillaModule`
 - **Server with babel compile & livereload?**: `npm run dev:server`
