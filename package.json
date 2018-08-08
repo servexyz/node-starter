@@ -31,9 +31,11 @@
     "idempotent-babel-polyfill": "^0.1.1"
   },
   "scripts": {
-    "dev": "npm run dev:moduleReload",
-    "dev:module": "babel-node src/index.js",
-    "dev:moduleReload": "nodemon --watch src/index.js --exec 'babel src/index.js'",
+    "start": "npm run dev",
+    "dev": "npm run dev:liveReloadedModule",
+    "dev:vanillaModule": "babel-node src/index.js",
+    "dev:builtModule": "npm run build && babel-node build/main.js",
+    "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
     "dev:server": "webpack --mode development --watch --display minimal",
     "test": "npm-run-all -s clean build test:ava",
     "test:ava": "ava",
