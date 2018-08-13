@@ -23,6 +23,7 @@ git clone git@github.com:servexyz/node-starter
 - **Module with babel compile**: `npm run dev:builtModule`
 - **Module without babel compile**: `npm run dev:vanillaModule`
 - **Server with babel compile & livereload?**: `npm run dev:server`
+  > dev:server is having issues. For liveReload functionality, stick with `dev:liveReloadedModule`. Read about issue [here](https://github.com/servexyz/node-starter/issues/12)
 
 ##### Production
 
