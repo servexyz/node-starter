@@ -43,6 +43,7 @@
     "clean": "rm -Rf ./build",
     "build": "webpack --mode production --display minimal",
     "publish": "npm run build && npm run publish:np",
+    "production:server": "node build/main.js",
     "publish:np": "npx np"
   },
   "ava": {
