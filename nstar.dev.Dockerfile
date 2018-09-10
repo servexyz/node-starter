@@ -4,7 +4,7 @@ COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install
 
-RUN echo "Dockerfile.dev of node-starter building"
+RUN echo "nstar.dev.Dockerfile of node-starter building"
 FROM mhart/alpine-node:base-10
 WORKDIR /usr/src/server
 

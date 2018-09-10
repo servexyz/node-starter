@@ -35,7 +35,7 @@
     "start": "npm run dev",
     "clean": "npm run clean:docker",
     "clean:build": "rm -Rf ./build",
-    "clean:docker": "docker rm -f $(docker ps -aqf 'name=prisma')",
+    "clean:docker": "docker rm -f $(docker ps -aqf 'name=node-starter')",
     "dev": "npm run dev:liveReloadedModule",
     "dev:vanillaModule": "babel-node src/index.js",
     "dev:builtModule": "npm run build && babel-node build/main.js",
