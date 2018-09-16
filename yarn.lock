@@ -3725,9 +3725,11 @@ npm-run-path@^2.0.0:
   dependencies:
     path-key "^2.0.0"
 
-npm-starter-sample-module@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/npm-starter-sample-module/-/npm-starter-sample-module-0.0.2.tgz#7f9db0fc7f963f7ffca85dc5b08e93c15249607b"
+npm-starter-sample-module@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/npm-starter-sample-module/-/npm-starter-sample-module-0.0.3.tgz#8d9fbe9a7996a179984409e09d8e6d4ffd501910"
+  dependencies:
+    "@babel/polyfill" "^7.0.0"
 
 npmlog@^4.0.2:
   version "4.1.2"
