@@ -29,7 +29,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "idempotent-babel-polyfill": "^0.1.1"
+    "@babel/polyfill": "^7.0.0"
   },
   "scripts": {
     "start": "npm run dev",
@@ -53,9 +53,13 @@
     "publish:np": "npx np"
   },
   "ava": {
+    "files": [
+      "!npm-starter-sample-module/**/*.js",
+      "tests/"
+    ],
     "require": [
       "@babel/register",
-      "idempotent-babel-polyfill"
+      "@babel/polyfill"
     ],
     "verbose": true
   }
