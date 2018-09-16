@@ -1,6 +1,7 @@
 import test from "ava";
 import { SAMPLE_ENV } from "babel-dotenv";
-import { honesty } from "npm-starter-sample-module";
+import { honesty as remoteHonesty } from "npm-starter-sample-module";
+import { honesty as localHonesty } from "../npm-starter-sample-module/build/main.js";
 
 test("foo", t => {
   t.pass();
@@ -16,6 +17,10 @@ test("SAMPLE_ENV loads", t => {
   t.is(SAMPLE_ENV, "foobar");
 });
 
-test("honesty is the best policy", t => {
-  t.truthy(honesty());
+test("honesty (remote) works", t => {
+  t.truthy(remoteHonesty());
+});
+
+test("honesty (local) works", t => {
+  t.truthy(localHonesty());
 });
