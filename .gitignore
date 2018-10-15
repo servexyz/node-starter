@@ -8,7 +8,7 @@ yarn-error.log*
 
 # sample module
 # https://www.npmjs.com/package/npm-starter-sample-module
-npm-starter-sample-module
+#npm-starter-sample-module
 
 # github.com/servexyz/npm-starter-sample-module
 sample-module
