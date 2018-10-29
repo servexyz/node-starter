@@ -603,6 +603,12 @@
   dependencies:
     arrify "^1.0.1"
 
+"@packtracker/webpack-plugin@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@packtracker/webpack-plugin/-/webpack-plugin-1.1.1.tgz#246dc286fb2d807cd145d5a077a86f6e637949fb"
+  dependencies:
+    tiny-json-http "^7.0.2"
+
 "@webassemblyjs/ast@1.7.8":
   version "1.7.8"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.7.8.tgz#f31f480debeef957f01b623f27eabc695fa4fe8f"
@@ -1097,12 +1103,6 @@ babel-plugin-check-es2015-constants@^6.8.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-check-es2015-constants/-/babel-plugin-check-es2015-constants-6.22.0.tgz#35157b101426fd2ffd3da3f75c7d1e91835bbf8a"
   dependencies:
     babel-runtime "^6.22.0"
-
-babel-plugin-dotenv@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-dotenv/-/babel-plugin-dotenv-0.1.1.tgz#9c8faea67a7c034fe7e94099187ab2e7573400bc"
-  dependencies:
-    dotenv "^2.0.0"
 
 babel-plugin-espower@3.0.0-beta.2:
   version "3.0.0-beta.2"
@@ -1971,10 +1971,6 @@ dot-prop@^4.1.0, dot-prop@^4.2.0:
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
   dependencies:
     is-obj "^1.0.0"
-
-dotenv@^2.0.0:
-  version "2.0.0"
-  resolved "http://registry.npmjs.org/dotenv/-/dotenv-2.0.0.tgz#bd759c357aaa70365e01c96b7b0bec08a6e0d949"
 
 dotenv@^6.1.0:
   version "6.1.0"
@@ -4832,6 +4828,10 @@ timers-browserify@^2.0.4:
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.10.tgz#1d28e3d2aadf1d5a5996c4e9f95601cd053480ae"
   dependencies:
     setimmediate "^1.0.4"
+
+tiny-json-http@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/tiny-json-http/-/tiny-json-http-7.0.2.tgz#be5a52d75d4a92046bc1c5c99a928b49eee1cd6b"
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
