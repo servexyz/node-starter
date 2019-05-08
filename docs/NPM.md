@@ -1,6 +1,6 @@
-# Node-Starter
+![logo](./docs/logo/NStar.svg)
 
-> Starting point for modules being published to npmjs.com & node servers
+> Starting point for modules being published to npmjs.com & servers
 
 ## Getting Started
 
