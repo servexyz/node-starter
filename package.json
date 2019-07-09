@@ -14,7 +14,6 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "7.5.2",
     "@babel/register": "7.4.4",
-    "@packtracker/webpack-plugin": "^2.1.0",
     "ava": "^2.2.0",
     "babel-loader": "^8.0.6",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
@@ -28,7 +27,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "dotenv": "^8.0.0"
+    "dotenv": "^8.0.0",
+    "uninstall": "0.0.0"
   },
   "scripts": {
     "start": "npm run dev",
