@@ -3,6 +3,7 @@ const NodemonPlugin = require("nodemon-webpack-plugin");
 const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
 const NodeExternals = require("webpack-node-externals");
 const SizePlugin = require("size-plugin");
+const WebpackBar = require("webpackbar");
 
 module.exports = {
   entry: [path.resolve(__dirname, "src/index.js")],
@@ -43,6 +44,7 @@ module.exports = {
       verbose: false
     }),
     new DuplicatePackageCheckerPlugin(),
-    new SizePlugin()
+    new SizePlugin(),
+    new WebpackBar()
   ]
 };
