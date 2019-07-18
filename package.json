@@ -58,13 +58,17 @@
     "ci:prepare": "npm install -g trevor gnomon"
   },
   "ava": {
-    "files": [
-      "!npm-starter-sample-module/**/*.js",
-      "tests/**/*"
-    ],
     "require": [
-      "@babel/register",
-      "@babel/polyfill"
+      "@babel/register"
+    ],
+    "babel": {
+      "testOptions": {
+        "babelrc": true,
+        "configFile": true
+      }
+    },
+    "files": [
+      "tests/**/*"
     ],
     "verbose": true
   }
