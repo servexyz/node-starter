@@ -34,7 +34,7 @@
   "scripts": {
     "start": "npm run dev",
     "build": "webpack --mode production --display minimal",
-    "clean": "npm run clean:docker",
+    "clean": "npm run clean:build",
     "clean:build": "rm -Rf ./build",
     "clean:docker": "docker rm -f $(docker ps -aqf 'name=node-starter')",
     "dev": "npm run dev:liveReloadedModule",
@@ -51,6 +51,7 @@
     "production": "npm run build && node build/main.js",
     "publish:np": "npx np",
     "ci": "npm run build && npm run ci:local:timed",
+    "ci:remote": "npm-run-all -s clean:build build test:ava",
     "ci:local": "trevor",
     "ci:local:timed": "npm run ci:local | gnomon --type=elapsed-total",
     "ci:local:cache:install": "docker pull verdaccio/verdaccio",
