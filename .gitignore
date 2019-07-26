@@ -9,7 +9,6 @@ yarn-error.log*
 
 # github.com/servexyz/npm-starter-sample-module
 sample-module
-.repogen.js
 
 # Runtime data
 pids
