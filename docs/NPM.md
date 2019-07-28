@@ -51,12 +51,6 @@ You'll notice that README.md is symlinked.
 
 When forking, remove README.md. The `NPM.md` file will still exist in docs (that way you don't lose initial reference)
 
-##### Demo
-
-![node-starter cli demo](https://github.com/servexyz/node-starter/blob/master/docs/node-starter-scripts.gif)
-
----
-
 ## Questions
 
 _Why are server & module separated?_
