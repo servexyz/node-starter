@@ -14,6 +14,20 @@ git clone git@github.com:servexyz/node-starter
 
 ## Use
 
+<details><summary>Develop</summary>
+
+</details>
+
+<details><summary>Build</summary>
+
+</details>
+
+<details><summary>Test</summary></details>
+
+<details><summary>CI</summary></details>
+
+
+
 ##### Developing
 
 > TLDR:
