@@ -64,8 +64,6 @@ _Why are server & module separated?_
 
 **Internal**
 
-- [@servexyz/cli-starter](https://github.com/servexyz/cli-starter)
-- [@servexyz/service-starter](https://github.com/servexyz/service-starter)
 - [@servexyz/npm-starter-sample-module](https://github.com/servexyz/npm-starter-sample-module)
 
 > The purpose of npm-starter-sample-module is to ensure that imports are working (ie. confirm that webpack is building libraries properly)
