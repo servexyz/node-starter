@@ -25,7 +25,7 @@ git clone https://github.com:servexyz/node-starter
 
 <ul style="padding-top:5px">
 <li><code>start</code> - Primary entry point; parent to dev</li>
-<li><code>build</code> - Standalone command</li>
+<li><code>build</code> - Utility script; parent to build options</li>
 <li><code>clean</code> - Utility script; intended to be used for docker & node_modules</li>
 <li><code>dev</code> - Secondary entry point; parent to test</li>
 <li><code>test</code> - Secondary entry point; &lt;<code>np</code>&gt; friendly </li>
@@ -44,71 +44,37 @@ By structuring it this way, you will be able to:
 </details>
 
 <details>
-<summary>Intended Use Cases</summary>
+<summary>Use Case Overview</summary>
 
+<h4>start</h4>
+JS Developers are trained to <code>npm install</code> and <code>npm start</code>. In keeping with that tradition, start should point to your default developer experience. 
+
+<h4>build</h4>
+Run webpack for the specified environment. Read more about difference in webpack modes <a href="https://webpack.js.org/configuration/mode/">here</a> 
+
+<h4>clean</h4>
+Remove build or docker containers.
+
+<h4>dev</h4>
+Run your package with babel, nodemon or docker. Live reload watches changes and updatse your build for you automatically. 
+
+
+<h4>docker</h4>
+Compose your containers (see <a href="https://github.com/servexyz/node-starter/blob/master/docker-compose.yml">docker-compose.yml</a> for more info) or live reload your docker containers (currently uses <a href="https://www.npmjs.com/package/docker-live-reload">docker-live-reload</a>)
+
+
+<h4>test</h4>
+Unit tests, via <a href="npmjs.com/package/ava">ava</a>
+
+
+<h4>production</h4>
+This is a standalone script which builds and runs your script with <code>node</code>
+
+<h4>ci</h4>
+Run travis (CI) environment locally via trevor and test dependency vulnerabilities with snyk. The <code>ci:remote</code> script is called by travis.yml
+<h4>
+<hr />
 </details>
-
-### NPM Scripts - `Parents`
-
-<details>
-<summary>Start</summary>
-<ul>
-<li><code>start</code>: run the "dev" script</li>
-</ul>
-
-Start is your consistent entry point for developing. Because developers expect to be able to run `npm install && npm start`, I recommend leaving this to delegate to "dev".
-</details>
-
-<details>
-<summary>Develop</summary>
-<ul>
-<li><code></code></li>
-<li><code></code></li>
-<li><code></code></li>
-</ul>
-</details>
-
-<details>
-<summary>Build</summary>
-<ul>
-<li><code></code></li>
-<li><code></code></li>
-<li><code></code></li>
-</ul>
-</details>
-
-<details>
-<summary>Test</summary>
-There are two ways to test. 
-
-<ul>
-<li><code></code></li>
-<li><code></code></li>
-<li><code></code></li>
-</ul>
-</details>
-
-<details>
-<summary>CI</summary>
-<ul>
-<li><code></code></li>
-<li><code></code></li>
-<li><code></code></li>
-</ul>
-
-</details>
-
-<details>
-<summary>Production</summary>
-<ul>
-<li><code></code></li>
-<li><code></code></li>
-<li><code></code></li>
-</ul>
-
-</details>
-
-
 
 ##### Developing
 
