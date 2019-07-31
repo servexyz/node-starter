@@ -14,7 +14,7 @@ git clone https://github.com:servexyz/node-starter
 
 ## Use
 
-### NPM Scripts - `FAQ`
+### NPM Scripts
 
 <details>
 <summary>Hierarchy</summary>
@@ -75,8 +75,6 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 <h4>
 <hr />
 </details>
-
-### NPM `Scripts`
 
 #### npm run `start`
 
@@ -170,6 +168,6 @@ You'll notice that README.md is symlinked.
 
 When forking, remove README.md. The `NSTAR.md` file will still exist in docs (in case you want to reference any of this later)
 
-#### Cleanup Scripts
+#### Cleanup Scripts (Future Goal)
 
 As opposed to the common reject pattern, the goal of node-starter is to keep everything exposed. Meanwhile, you'll have the option to "cleanup" for specific use cases (CLI, library, server, container)
