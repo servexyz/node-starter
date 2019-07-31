@@ -1,6 +1,6 @@
 ![logo](./docs/logo/NStar.svg)
 
-> Starting point for modules being published to npmjs.com & servers
+> Starting point for node modules and servers
 
 ## Getting Started
 
@@ -76,56 +76,100 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 <hr />
 </details>
 
-##### Developing
+### NPM `Scripts`
 
-> TLDR:
-> npm run dev
+#### npm run `start`
 
-- **Module with babel compile & livereload?**: `npm run dev:liveReloadedModule`
-- **Module with babel compile**: `npm run dev:builtModule`
-- **Module without babel compile**: `npm run dev:vanillaModule`
-- **Server with babel compile & livereload?**: `npm run dev:server`
-  > dev:server is having issues. For liveReload functionality, stick with `dev:liveReloadedModule`. Read about issue [here](https://github.com/servexyz/node-starter/issues/12)
+```json
+{
+  "start": "npm run dev"
+}
+```
 
-##### Production
+#### npm run `build`
 
-> TLDR:
-> npm run build ...or... npm run publish
+```json
+{
+  "build": "npm run build:prod",
+  "build:prod": "webpack --mode production --display minimal",
+  "build:dev": "webpack --mode development --display minimal",
+}
+```
 
-- **Build**: `npm run build`
-- **Publish**: `npm run publish` (this publishes module to NPM)
+#### npm run `clean`
 
-##### Testing
+```json
+{
+  "clean": "npm run clean:build",
+  "clean:build": "rm -Rf ./build",
+  "clean:docker": "docker rm -f $(docker ps -aqf 'name=node-starter')"
+}
+```
 
-> TLDR:
-> npm run test
+#### npm run `dev`
 
-- **Test Ava Once**: `npm run test:ava`
-- **Test Ava with Live Reload**: `npm run test:liveReloadedAva`
+```json
+{
+  "dev": "npm run dev:liveReloadedModuleAndTests",
+  "dev:vanillaModule": "babel-node src/index.js",
+  "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
+  "dev:liveReloadedDocker": "npm-run-all -p docker:compose dev:liveReloadedModule docker:liveReload ",
+  "dev:liveReloadedModuleAndTests": "npm-run-all -s clean:build build test:liveReloadedAva" 
+}
+```
 
+#### npm run `docker`
+
+```json
+{
+  "docker:liveReload": "npx docker-live-reload 'src/**/*' node-starter_server_1 /usr/src/server/src",
+  "docker:compose": "docker-compose up -d"
+}
+```
+
+#### npm run `test`
+
+```json
+{
+  "test": "npm run test:ava",
+  "test:ava": "ava",
+  "test:liveReloadedAva": "ava --watch"
+}
+```
+
+#### npm run `production`
+
+```json
+{
+  "production": "npm run build && node build/main.js"
+}
+```
+
+#### npm run `ci`
+
+```json
+{
+  "ci": "npm-run-all -s build ci:local:timed:vuln",
+  "ci:snyk": "snyk test",
+  "ci:remote": "npm-run-all -s clean:build build test:ava",
+  "ci:local": "trevor",
+  "ci:local:timed": "npm run ci:local | gnomon --type=elapsed-total",
+  "ci:local:timed:vuln": "npm-run-all -p ci:snyk ci:local | gnomon --type=elapsed-total",
+  "ci:local:cache:install": "docker pull verdaccio/verdaccio",
+  "ci:local:cache:run": "docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio",
+  "ci:prepare": "npm install -g trevor gnomon"
+}
+```
 ---
 
-## Docs
+## Customizing
 
-##### NPM.MD
+#### README.MD --> docs/NSTAR.MD
 
 You'll notice that README.md is symlinked.
 
-When forking, remove README.md. The `NPM.md` file will still exist in docs (that way you don't lose initial reference)
+When forking, remove README.md. The `NSTAR.md` file will still exist in docs (in case you want to reference any of this later)
 
-## Questions
+#### Cleanup Scripts
 
-_Why are server & module separated?_
-
-- Module is compiled/run via CLI (using @babel/cli & nodemon)
-- Server is compiled & run via webpack config (using webpack & nodemon-webpack-plugin)
-
----
-
-## Related
-
-**Internal**
-
-- [@servexyz/npm-starter-sample-module](https://github.com/servexyz/npm-starter-sample-module)
-
-> The purpose of npm-starter-sample-module is to ensure that imports are working (ie. confirm that webpack is building libraries properly)
+As opposed to the common reject pattern, the goal of node-starter is to keep everything exposed. Meanwhile, you'll have the option to "cleanup" for specific use cases (CLI, library, server, container)

@@ -1,7 +1,7 @@
 {
   "name": "node-starter",
   "version": "1.0.0",
-  "description": "node-starter",
+  "description": "starting point for node modules and servers",
   "main": "build/main.js",
   "license": "MIT",
   "keywords": [
