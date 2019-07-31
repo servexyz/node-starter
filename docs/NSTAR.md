@@ -17,8 +17,6 @@ npm install && npm start
 
 ![npm-starter](./docs/npm_start.png)
 
----
-
 ## Use
 
 <details>
