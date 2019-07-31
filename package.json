@@ -40,7 +40,9 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "build": "webpack --mode production --display minimal",
+    "build": "npm run build:prod",
+    "build:prod": "webpack --mode production --display minimal",
+    "build:dev": "webpack --mode development --display minimal",
     "clean": "npm run clean:build",
     "clean:build": "rm -Rf ./build",
     "clean:docker": "docker rm -f $(docker ps -aqf 'name=node-starter')",
@@ -51,7 +53,6 @@
     "dev:liveReloadedModuleAndTests": "npm-run-all -s clean:build build test:liveReloadedAva",
     "docker:liveReload": "npx docker-live-reload 'src/**/*' node-starter_server_1 /usr/src/server/src",
     "docker:compose": "docker-compose up -d",
-    "dev:server": "webpack --mode development --watch --display minimal",
     "test": "npm run test:ava",
     "test:ava": "ava",
     "test:liveReloadedAva": "ava --watch",
