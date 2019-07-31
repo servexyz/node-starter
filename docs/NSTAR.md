@@ -14,7 +14,13 @@ git clone https://github.com:servexyz/node-starter
 
 ## Use
 
+> Example output from `npm-start`
+
+![npm-starter](./docs/npm_start.png)
+
 ### NPM Scripts
+
+> Description of [package.json](./package.json)
 
 <details>
 <summary>Hierarchy</summary>
