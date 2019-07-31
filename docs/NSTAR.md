@@ -22,7 +22,6 @@ git clone https://github.com:servexyz/node-starter
 <h4>Parent scripts</h4>
 <div style="border-left: 4px solid #E1E4E8; padding-left: 8px">The recommended way to use these parent commands is to point them at the child command that you'll use.</div>
 
-
 <ul style="padding-top:5px">
 <li><code>start</code> - Primary entry point; parent to dev</li>
 <li><code>build</code> - Utility script; parent to build options</li>
@@ -47,25 +46,22 @@ By structuring it this way, you will be able to:
 <summary>Use Case Overview</summary>
 
 <h4>start</h4>
-JS Developers are trained to <code>npm install</code> and <code>npm start</code>. In keeping with that tradition, start should point to your default developer experience. 
+JS Developers are trained to <code>npm install</code> and <code>npm start</code>. In keeping with that tradition, start should point to your default developer experience.
 
 <h4>build</h4>
-Run webpack for the specified environment. Read more about difference in webpack modes <a href="https://webpack.js.org/configuration/mode/">here</a> 
+Run webpack for the specified environment. Read more about difference in webpack modes <a href="https://webpack.js.org/configuration/mode/">here</a>
 
 <h4>clean</h4>
 Remove build or docker containers.
 
 <h4>dev</h4>
-Run your package with babel, nodemon or docker. Live reload watches changes and updatse your build for you automatically. 
-
+Run your package with babel, nodemon or docker. Live reload watches changes and updatse your build for you automatically.
 
 <h4>docker</h4>
 Compose your containers (see <a href="https://github.com/servexyz/node-starter/blob/master/docker-compose.yml">docker-compose.yml</a> for more info) or live reload your docker containers (currently uses <a href="https://www.npmjs.com/package/docker-live-reload">docker-live-reload</a>)
 
-
 <h4>test</h4>
 Unit tests, via <a href="npmjs.com/package/ava">ava</a>
-
 
 <h4>production</h4>
 This is a standalone script which builds and runs your script with <code>node</code>
@@ -90,7 +86,7 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 {
   "build": "npm run build:prod",
   "build:prod": "webpack --mode production --display minimal",
-  "build:dev": "webpack --mode development --display minimal",
+  "build:dev": "webpack --mode development --display minimal"
 }
 ```
 
@@ -112,7 +108,7 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
   "dev:vanillaModule": "babel-node src/index.js",
   "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
   "dev:liveReloadedDocker": "npm-run-all -p docker:compose dev:liveReloadedModule docker:liveReload ",
-  "dev:liveReloadedModuleAndTests": "npm-run-all -s clean:build build test:liveReloadedAva" 
+  "dev:liveReloadedModuleAndTests": "npm-run-all -s clean:build build test:liveReloadedAva"
 }
 ```
 
@@ -158,6 +154,27 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
   "ci:prepare": "npm install -g trevor gnomon"
 }
 ```
+
+---
+
+## Zsh/Bash Aliases
+
+Aliases you can import in your bash/zsh config to make it easier to run these NPM scripts
+
+```
+alias b='npm run build'
+alias build='npm run build'
+alias ci='npm run ci'
+alias clean='npm run clean'
+alias d='npm run dev'
+alias dev='npm run dev'
+alias n='npm start'
+alias ni='npm install'
+alias ns='npm start'
+alias t='npm run test'
+alias test='npm run test'
+```
+
 ---
 
 ## Customizing
