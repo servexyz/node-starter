@@ -1,8 +1,8 @@
 ![logo](./docs/logo/NStar.svg)
 
-> Starting point for node modules and servers
-
 ## Getting Started
+
+`node-starter` (aka `NSTAR`) is a starting point for node modules and servers
 
 **Install**
 
