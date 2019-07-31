@@ -4,6 +4,11 @@
   "description": "node-starter",
   "main": "build/main.js",
   "license": "MIT",
+  "keywords": [
+    "servexyz",
+    "NSTAR",
+    "node-starter"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/servexyz/node-starter"
