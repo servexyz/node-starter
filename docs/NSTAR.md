@@ -4,26 +4,25 @@
 
 ## Getting Started
 
-### Install
+**Install**
 
 ```sh
 git clone https://github.com:servexyz/node-starter
+npm install && npm start
 ```
+
+**Output**
+
+> What you'll see after running `npm install && npm start`
+
+![npm-starter](./docs/npm_start.png)
 
 ---
 
 ## Use
 
-> Example output from `npm-start`
-
-![npm-starter](./docs/npm_start.png)
-
-### NPM Scripts
-
-> Description of [package.json](./package.json)
-
 <details>
-<summary>Hierarchy</summary>
+<summary>Understand NPM Scripts Hierarchy</summary>
 
 <h4>Parent scripts</h4>
 <div style="border-left: 4px solid #E1E4E8; padding-left: 8px">The recommended way to use these parent commands is to point them at the child command that you'll use.</div>
@@ -48,37 +47,9 @@ By structuring it this way, you will be able to:
 <hr />
 </details>
 
-<details>
-<summary>Use Case Overview</summary>
-
-<h4>start</h4>
-JS Developers are trained to <code>npm install</code> and <code>npm start</code>. In keeping with that tradition, start should point to your default developer experience.
-
-<h4>build</h4>
-Run webpack for the specified environment. Read more about difference in webpack modes <a href="https://webpack.js.org/configuration/mode/">here</a>
-
-<h4>clean</h4>
-Remove build or docker containers.
-
-<h4>dev</h4>
-Run your package with babel, nodemon or docker. Live reload watches changes and updatse your build for you automatically.
-
-<h4>docker</h4>
-Compose your containers (see <a href="https://github.com/servexyz/node-starter/blob/master/docker-compose.yml">docker-compose.yml</a> for more info) or live reload your docker containers (currently uses <a href="https://www.npmjs.com/package/docker-live-reload">docker-live-reload</a>)
-
-<h4>test</h4>
-Unit tests, via <a href="npmjs.com/package/ava">ava</a>
-
-<h4>production</h4>
-This is a standalone script which builds and runs your script with <code>node</code>
-
-<h4>ci</h4>
-Run travis (CI) environment locally via trevor and test dependency vulnerabilities with snyk. The <code>ci:remote</code> script is called by travis.yml
-<h4>
-<hr />
-</details>
-
 #### npm run `start`
+
+JS Developers are trained to <code>npm install</code> and <code>npm start</code>. In keeping with that tradition, start should point to your default developer experience.
 
 ```json
 {
@@ -87,6 +58,8 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 ```
 
 #### npm run `build`
+
+Run webpack for the specified environment. Read more about difference in webpack modes <a href="https://webpack.js.org/configuration/mode/">here</a>
 
 ```json
 {
@@ -98,6 +71,8 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 
 #### npm run `clean`
 
+Remove build or docker containers.
+
 ```json
 {
   "clean": "npm run clean:build",
@@ -107,6 +82,8 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 ```
 
 #### npm run `dev`
+
+Run your package with babel, nodemon or docker. Live reload watches changes and updatse your build for you automatically.
 
 ```json
 {
@@ -119,6 +96,8 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 ```
 
 #### npm run `docker`
+
+Compose your containers (see <a href="https://github.com/servexyz/node-starter/blob/master/docker-compose.yml">docker-compose.yml</a> for more info) or live reload your docker containers (currently uses <a href="https://www.npmjs.com/package/docker-live-reload">docker-live-reload</a>)
 
 ```json
 {
@@ -139,6 +118,8 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 
 #### npm run `production`
 
+This is a standalone script which builds and runs your script with <code>node</code>
+
 ```json
 {
   "production": "npm run build && node build/main.js"
@@ -146,6 +127,8 @@ Run travis (CI) environment locally via trevor and test dependency vulnerabiliti
 ```
 
 #### npm run `ci`
+
+Run travis (CI) environment locally via trevor and test dependency vulnerabilities with snyk. The <code>ci:remote</code> script is called by travis.yml
 
 ```json
 {
