@@ -45,7 +45,7 @@
     "clean": "npm run clean:build",
     "clean:build": "rm -Rf ./build",
     "clean:docker": "docker rm -f $(docker ps -aqf 'name=node-starter')",
-    "dev": "npm run dev:liveReloadedModuleAndTests",
+    "dev": "npm run dev:liveReloadedModule",
     "dev:vanillaModule": "babel-node src/index.js",
     "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
     "dev:liveReloadedDocker": "npm-run-all -p docker:compose dev:liveReloadedModule docker:liveReload ",
