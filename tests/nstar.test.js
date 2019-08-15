@@ -2,6 +2,16 @@ import execa from "execa";
 import test from "ava";
 import path from "path";
 
+test("ava is working", t => {
+  t.pass();
+});
+
+test("es2017 in ava is working", async t => {
+  const bar = Promise.resolve("bar");
+
+  t.is(await bar, "bar");
+});
+
 const expectedLog = "Hello from node-starter!";
 test("src/index.js :: successfully logs", async t => {
   let scriptPath = path.join(process.cwd(), "src", "index.js");
