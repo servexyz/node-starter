@@ -1,0 +1,647 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateEnum",
+      "enum": "PredictionStatus",
+      "values": [
+        "ACTIVE",
+        "DELETED",
+        "REFUTED"
+      ]
+    },
+    {
+      "stepType": "CreateEnum",
+      "enum": "ResponseStatus",
+      "values": [
+        "UNPARSED",
+        "PARSED",
+        "SENT"
+      ]
+    },
+    {
+      "stepType": "CreateEnum",
+      "enum": "ResponseType",
+      "values": [
+        "ACKNOWLEDGMENT",
+        "RESULT",
+        "FAILURE"
+      ]
+    },
+    {
+      "stepType": "CreateModel",
+      "model": "TwitterUserMeta"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "TwitterUserMeta",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "TwitterUserMeta",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "TwitterUserMeta",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "TwitterUserMeta",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "TwitterUserMeta",
+      "field": "twitterId",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "TwitterUserMeta",
+      "field": "twitterUsername",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateModel",
+      "model": "User"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "User",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "User",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "User",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "createdAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "User",
+      "field": "createdAt",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "User",
+      "field": "createdAt",
+      "directive": "default",
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "updatedAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "User",
+      "field": "updatedAt",
+      "directive": "updatedAt"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "email",
+      "type": "String",
+      "arity": "optional"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "name",
+      "type": "String",
+      "arity": "optional"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "twitter",
+      "type": "TwitterUserMeta",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "predictions",
+      "type": "Prediction",
+      "arity": "list"
+    },
+    {
+      "stepType": "CreateModel",
+      "model": "Prediction"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Prediction",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Prediction",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Prediction",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "createdAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Prediction",
+      "field": "createdAt",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Prediction",
+      "field": "createdAt",
+      "directive": "default",
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "updatedAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Prediction",
+      "field": "updatedAt",
+      "directive": "updatedAt"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "start",
+      "type": "DateTime",
+      "arity": "optional"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "finish",
+      "type": "DateTime",
+      "arity": "optional"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "author",
+      "type": "User",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "content",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "assetPair",
+      "type": "AssetPair",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "responses",
+      "type": "Response",
+      "arity": "list"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "attributed",
+      "type": "Boolean",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Prediction",
+      "field": "attributed",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Prediction",
+      "field": "attributed",
+      "directive": "default",
+      "argument": "value",
+      "value": "false"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Prediction",
+      "field": "status",
+      "type": "PredictionStatus",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Prediction",
+      "field": "status",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Prediction",
+      "field": "status",
+      "directive": "default",
+      "argument": "value",
+      "value": "Active"
+    },
+    {
+      "stepType": "CreateModel",
+      "model": "Asset"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Asset",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Asset",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Asset",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "createdAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Asset",
+      "field": "createdAt",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Asset",
+      "field": "createdAt",
+      "directive": "default",
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "updatedAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Asset",
+      "field": "updatedAt",
+      "directive": "updatedAt"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "name",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "symbol",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "assetNumerator",
+      "type": "AssetPair",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Asset",
+      "field": "assetNumerator",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Asset",
+      "field": "assetNumerator",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"Asset\""
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "currencyDenominator",
+      "type": "AssetPair",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Asset",
+      "field": "currencyDenominator",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Asset",
+      "field": "currencyDenominator",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"Currency\""
+    },
+    {
+      "stepType": "CreateModel",
+      "model": "AssetPair"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "AssetPair",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "AssetPair",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "AssetPair",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "AssetPair",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "AssetPair",
+      "field": "createdAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "AssetPair",
+      "field": "createdAt",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "AssetPair",
+      "field": "createdAt",
+      "directive": "default",
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "AssetPair",
+      "field": "updatedAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "AssetPair",
+      "field": "updatedAt",
+      "directive": "updatedAt"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "AssetPair",
+      "field": "assetNumerator",
+      "type": "Asset",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "AssetPair",
+      "field": "assetNumerator",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "AssetPair",
+      "field": "assetNumerator",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"Asset\""
+    },
+    {
+      "stepType": "CreateField",
+      "model": "AssetPair",
+      "field": "currencyDenominator",
+      "type": "Asset",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "AssetPair",
+      "field": "currencyDenominator",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "AssetPair",
+      "field": "currencyDenominator",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"Currency\""
+    },
+    {
+      "stepType": "CreateField",
+      "model": "AssetPair",
+      "field": "ratio",
+      "type": "Float",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateModel",
+      "model": "Response"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Response",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Response",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Response",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Response",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Response",
+      "field": "createdAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Response",
+      "field": "createdAt",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Response",
+      "field": "createdAt",
+      "directive": "default",
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Response",
+      "field": "updatedAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Response",
+      "field": "updatedAt",
+      "directive": "updatedAt"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Response",
+      "field": "sentAt",
+      "type": "DateTime",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Response",
+      "field": "recipient",
+      "type": "User",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Response",
+      "field": "type",
+      "type": "ResponseType",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Response",
+      "field": "status",
+      "type": "ResponseStatus",
+      "arity": "required"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+// --------------------------
+
+generator photon {
+  provider = "photonjs"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+// --------------------------
+
+model TwitterUserMeta {
+  id              String @default(cuid()) @id
+  twitterId       String
+  twitterUsername String
+}
+
+model User {
+  id          String          @default(cuid()) @id
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  email       String?         @unique
+  name        String?
+  twitter     TwitterUserMeta
+  predictions Prediction[]
+}
+
+// --------------------------
+
+enum PredictionStatus {
+  ACTIVE
+  DELETED
+  REFUTED
+}
+
+model Prediction {
+  id         String           @default(cuid()) @id
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+  start      DateTime?
+  finish     DateTime?
+  author     User
+  content    String
+  assetPair  AssetPair
+  responses  Response[]
+  attributed Boolean          @default(value: false)
+  status     PredictionStatus @default(value: Active)
+}
+
+// --------------------------
+
+model Asset {
+  id                  String    @default(cuid()) @id
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  name                String
+  symbol              String
+  assetNumerator      AssetPair @relation(name: "Asset")
+  currencyDenominator AssetPair @relation(name: "Currency")
+}
+
+model AssetPair {
+  id                  String   @default(cuid()) @id
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  assetNumerator      Asset    @relation(name: "Asset")
+  currencyDenominator Asset    @relation(name: "Currency")
+  ratio               Float
+}
+
+// --------------------------
+
+enum ResponseStatus {
+  UNPARSED
+  PARSED
+  SENT
+}
+
+enum ResponseType {
+  ACKNOWLEDGMENT
+  RESULT
+  FAILURE
+}
+
+model Response {
+  id        String         @default(cuid()) @id
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  sentAt    DateTime
+  recipient User
+  type      ResponseType
+  status    ResponseStatus
+}

@@ -1,0 +1,112 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Prediction",
+      "field": "attributed",
+      "directive": "default",
+      "argument": "value",
+      "value": "false"
+    },
+    {
+      "stepType": "DeleteDirectiveArgument",
+      "model": "Prediction",
+      "field": "attributed",
+      "directive": "default",
+      "argument": ""
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Prediction",
+      "field": "status",
+      "directive": "default",
+      "argument": "value",
+      "value": "Active"
+    },
+    {
+      "stepType": "DeleteDirectiveArgument",
+      "model": "Prediction",
+      "field": "status",
+      "directive": "default",
+      "argument": ""
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "assetNumerator",
+      "type": "AssetPair",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Asset",
+      "field": "assetNumerator",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Asset",
+      "field": "assetNumerator",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"Asset\""
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Asset",
+      "field": "currencyDenominator",
+      "type": "AssetPair",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Asset",
+      "field": "currencyDenominator",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Asset",
+      "field": "currencyDenominator",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"Currency\""
+    },
+    {
+      "stepType": "DeleteField",
+      "model": "Asset",
+      "field": "assetPair"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "AssetPair",
+      "field": "assetNumerator",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"Asset\""
+    },
+    {
+      "stepType": "DeleteDirectiveArgument",
+      "model": "AssetPair",
+      "field": "assetNumerator",
+      "directive": "relation",
+      "argument": ""
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "AssetPair",
+      "field": "currencyDenominator",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"Currency\""
+    },
+    {
+      "stepType": "DeleteDirectiveArgument",
+      "model": "AssetPair",
+      "field": "currencyDenominator",
+      "directive": "relation",
+      "argument": ""
+    }
+  ]
+}
