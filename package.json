@@ -35,7 +35,7 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.7.6"
+    "@babel/runtime": "^7.26.10"
   },
   "scripts": {
     "start": "npm run dev",
